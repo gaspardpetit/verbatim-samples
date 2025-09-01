@@ -1,8 +1,9 @@
-import numpy as np
-import librosa
 import os
-import matplotlib.pyplot as plt
 import shutil
+
+import librosa
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def analyze_channels(audio_file, tolerance=1e-6, dominance_threshold=0.8):
@@ -200,7 +201,7 @@ def get_user_input_for_rename(file_path, channel_type):
         print("Please enter a valid title (alphanumeric characters and underscores only).")
 
     # Ask if duration should be added
-    add_duration = input("Add audio duration to filename? (y/n): ").strip().lower() == 'y'
+    add_duration = input("Add audio duration to filename? (y/n): ").strip().lower() == "y"
 
     return num_speakers, languages, title, add_duration
 
@@ -326,7 +327,7 @@ duration_added_files = {}
 print(f"Found {len(audio_files)} audio files to process.")
 
 # Ask if duration should be added to all files
-add_duration_to_all = input("Add duration to all audio files? (y/n): ").strip().lower() == 'y'
+add_duration_to_all = input("Add duration to all audio files? (y/n): ").strip().lower() == "y"
 
 for file_path in audio_files:
     try:
